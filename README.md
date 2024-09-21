@@ -3,7 +3,6 @@ Java Source Code of Data Structures Based on ![algs4](https://algs4.cs.princeton
 ```
 .
 ├── array
-│   ├── char-array
 │   ├── dynamic-array
 │   ├── matrix
 │   ├── static-array
@@ -22,9 +21,10 @@ Java Source Code of Data Structures Based on ![algs4](https://algs4.cs.princeton
 │   ├── circular-linked-list
 │   ├── doubly-linked-list
 │   └── singly-linked-list
+├── number
+│   └── integer
 ├── queue
 │   └── monotonic-queue
-├── README.md
 ├── stack
 │   └── monotonic-stack
 └── tree
