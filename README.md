@@ -1,6 +1,5 @@
 # Java Data Structure
-
-Java Source Code of Data Structures Based of ![algs4](https://algs4.cs.princeton.edu/home/).
+Java Source Code of Data Structures Based on ![algs4](https://algs4.cs.princeton.edu/home/)
 ```
 .
 ├── array
