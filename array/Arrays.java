@@ -1,6 +1,4 @@
-/** Simple interface of Arrays in Java SE 17 */
-
-public interface ArraysADT<T> {
+public class Arrays<T> {
     // static builder methods
     public static <T> T[] copyOf(T[] orig, int newLen);
     public static <T> T[] copyOfRange(T[] orig, int from, int to);

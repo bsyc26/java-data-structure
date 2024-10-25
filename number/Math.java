@@ -1,6 +1,6 @@
 /** Simple interface of Math in algs4 */
 
-public interface MathADT {
+public interface Math {
     public static int abs(int num);
     public static int max(int num0, int num1);
     public static int min(int num0, int num1);
