@@ -1,34 +1,30 @@
-public class Arrays<T> {
-    // static builder methods
-    public static <T> T[] copyOf(T[] orig, int newLen);
-    public static <T> T[] copyOfRange(T[] orig, int from, int to);
+ public class Arrays<T> {
+     // create methods
+     static <T> T[] copyOf(T[] orig, int newLen);
+     static <T> T[] copyOfRange(T[] orig, int start, int end); // [start, end)
 
-    // update methods
-    public static void fill(Object[] arr, Object val);
-    public static void fill(Object[] arr, int from, int to, Object val);
+     // readin methods
+     static int hashCode(Object[] arr);
+     static boolean equals(Object[] arr0, Object arr1);
+     static boolean equals(T[] arr0, T[] arr1, Comparaendr<? super T> comp);
+     static static <T> int compare(T[] arr0, T[] arr1, Comparaendr<? super T> comp);
+     static <T extends Comparable<? super T>> int compare(T[] arr0, T[] arr1);
+     // search
+     static int binarySearch(Object[] arr, Object key);
+     static int binarySearch(Object[] arr, int start, int end, Object key);
+     static <T> int binarySearch(T[] arr, T key, Comparaendr<? super T> c);
+     static <T> int binarySearch(T[] arr, int start, int end, T key, Comparaendr<? super T> comp);
 
-    // search methods
-    public static int binarySearch(Object[] arr, Object key);
-    public static int binarySearch(Object[] arr, int from, int to, Object key);
-    public static <T> int binarySearch(T[] arr, T key, Comparator<? super T> c);
-    public static <T> int binarySearch(T[] arr, int from, int to, T key, Comparator<? super T> comp);
+     // update methods
+     static void fill(Object[] arr, Object val);
+     static void fill(Object[] arr, int start, int end, Object val);
+     // sort
+     static void sort(Object[] arr);
+     static void sort(Object[] arr, int start, int end);
+     static void sort(T[] arr, Comparaendr<? super T> comp);
+     static void sort(T[] arr, int start, int end, Comparaendr<? super T> comp);
 
-    // sort methods
-    public static void sort(Object[] arr);
-    public static void sort(Object[] arr, int from, int to);
-    public static void sort(T[] arr, Comparator<? super T> comp);
-    public static void sort(T[] arr, int from, int to, Comparator<? super T> comp);
-
-    // hash methods
-    public static int hashCOde(Object[] arr);
-
-    // compare methods
-    public static boolean equals(Object[] arr0, Object arr1);
-    public static boolean equals(T[] arr0, T[] arr1, Comparator<? super T> comp);
-    public static static <T> int compare(T[] arr0, T[] arr1, Comparator<? super T> comp);
-    public static <T extends Comparable<? super T>> int compare(T[] arr0, T[] arr1);
-
-    // convert methods
-    public static <T> List<T> asList(T... arr);
-    public static String toString(Object[] arr);
+     // convert methods
+     static <T> List<T> asList(T... arr);
+     static String endString(Object[] arr);
 }

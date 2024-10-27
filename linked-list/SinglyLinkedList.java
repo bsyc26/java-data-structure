@@ -25,24 +25,6 @@ public class SinglyLinkedList<E> {
         size = 0;
     }
 
-    // access methods
-    public int size() { return size; }
-    public boolean isEmpty() { return size == 0; }
-    public E getFirst() { // O(1)
-        if (isEmpty()) throw new NoSuchElementException();
-        return dummyHead.next.val;
-    }
-    public E getLast() { // O(1)
-        if (isEmpty()) throw new NoSuchElementException();
-        Node<E> last = getNode(size-1);
-        return last.val;
-    }
-    public E get(int index) { // O(N)
-        validIndex(index);
-        Node<E> target = getNode(index);
-        return target.val;
-    }
-
     // create methods
     public void addFirst(E item) { // O(1)
         // get node
@@ -82,6 +64,37 @@ public class SinglyLinkedList<E> {
         pred.next = newest;
         // update size
         ++size;
+    }
+
+    // readin methods
+    public int size() { return size; }
+    public boolean isEmpty() { return size == 0; }
+    public E getFirst() { // O(1)
+        if (isEmpty()) throw new NoSuchElementException();
+        return dummyHead.next.val;
+    }
+    public E getLast() { // O(1)
+        if (isEmpty()) throw new NoSuchElementException();
+        Node<E> last = getNode(size-1);
+        return last.val;
+    }
+    public E get(int index) { // O(N)
+        validIndex(index);
+        Node<E> target = getNode(index);
+        return target.val;
+    }
+
+    // update method
+    public E set(int index, E item) { // O(N)
+        // pre check
+        validIndex(index);
+        // get node
+        Node<E> target = getNode(index);
+        // modify val
+        E oldVal = target.val;
+        target.val = item;
+        // return old val
+        return oldVal;
     }
 
     // delete methods
@@ -136,19 +149,6 @@ public class SinglyLinkedList<E> {
         return delete.val;
     }
 
-    // modify method
-    public E set(int index, E item) { // O(N)
-        // pre check
-        validIndex(index);
-        // get node
-        Node<E> target = getNode(index);
-        // modify val
-        E oldVal = target.val;
-        target.val = item;
-        // return old val
-        return oldVal;
-    }
-    
     // support methods
     private Node<E> getNode(int index) { // O(N)
         Node<E> walker = dummyHead.next;
@@ -167,7 +167,7 @@ public class SinglyLinkedList<E> {
         System.out.println("null");
     }
 
-    // unittest
+    // unit test
     public static void main(String[] args) {
         SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
         list.addFirst(1);

@@ -27,21 +27,6 @@ public class DoublyLinkedList<E> {
         size = 0;
     }
 
-    // access methods
-    public E get(int index) { // O(N)
-        validIndex(index);
-        Node<E> target = getNode(index);
-        return target.val;
-    }
-    public E getFirst() { // O(1)
-        if (size < 1) throw new NoSuchElementException();
-        return dummyHead.next.val;
-    }
-    public E getLast() { // O(1)
-        if (size < 1) throw new NoSuchElementException();
-        return dummyTail.prev.val;
-    }
-
     // create methods
     public void addLast(E item) { // O(1)
         // get nodes
@@ -87,6 +72,34 @@ public class DoublyLinkedList<E> {
         newest.next = succ;
         // update size
         ++size;
+    }
+
+    // readin methods
+    public E get(int index) { // O(N)
+        validIndex(index);
+        Node<E> target = getNode(index);
+        return target.val;
+    }
+    public E getFirst() { // O(1)
+        if (size < 1) throw new NoSuchElementException();
+        return dummyHead.next.val;
+    }
+    public E getLast() { // O(1)
+        if (size < 1) throw new NoSuchElementException();
+        return dummyTail.prev.val;
+    }
+
+    // update method
+    public E set(int index, E item) { // O(N)
+        // pre check
+        validIndex(index);
+        // get node
+        Node<E> target = getNode(index);
+        // record old val && update node
+        E oldVal = target.val;
+        target.val = item;
+        // return old val
+        return oldVal;
     }
 
     // delete methods
@@ -141,19 +154,6 @@ public class DoublyLinkedList<E> {
         --size;
         // return delete
         return delete.val;
-    }
-
-    // modify method
-    public E set(int index, E item) { // O(N)
-        // pre check
-        validIndex(index);
-        // get node
-        Node<E> target = getNode(index);
-        // record old val && modify node
-        E oldVal = target.val;
-        target.val = item;
-        // return old val
-        return oldVal;
     }
 
     // support methods
