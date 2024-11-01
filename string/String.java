@@ -1,4 +1,4 @@
-public interface StringADT {
+public interface String {
     // constructors
     public String(char[] chars);
     public String(char[] chars, int start, int len);
