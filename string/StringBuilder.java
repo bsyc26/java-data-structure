@@ -1,45 +1,41 @@
-public interface StringBuilderADT {
-    // constructors
-    public StringBuilder();
-    public StringBuilder(int capacity);
-    public StringBuilder(String str);
+public interface StringBuilder {
 
-    // access methods
-    public int length();
-    public char chatAt(int indx);
-    public int compareTo(StringBuilder another);
-    public int indexOf(String str);
-    public int indexOf(String str, int fromIndex);
-    public int lastIndexOf(String str);
-    public int lastIndexOf(String str, int fromIndex);
+     // constructors
+     StringBuilder();
+     StringBuilder(int capacity);
+     StringBuilder(String str);
 
-    // append methods
-    public StringBuilder append(char c);
-    public StringBuilder append(char[] str);
-    public StringBuilder append(char[] str, int offset, int len);
-    public StringBuilder append(String str);
-    public StringBuilder append(StringBuilder sb);
+     // create methods
+     StringBuilder append(char c);
+     StringBuilder append(char[] str);
+     StringBuilder append(char[] str, int offset, int len);
+     StringBuilder append(String str);
+     StringBuilder append(StringBuilder sb);
+     StringBuilder insert(int offset, char c);
+     StringBuilder insert(int offset, char[] str);
+     StringBuilder insert(int index, char[] str, int offset, int len);
+     StringBuilder insert(int offset, String str);
 
-    // insert methods
-    public StringBuilder insert(int offset, char c);
-    public StringBuilder insert(int offset, char[] str);
-    public StringBuilder insert(int index, char[] str, int offset, int len);
-    public StringBuilder insert(int offset, String str);
+     // readin methods
+     int length();
+     char chatAt(int indx);
+     int compareTo(StringBuilder another);
+     int indexOf(String str);
+     int indexOf(String str, int fromIndex);
+     int lastIndexOf(String str);
+     int lastIndexOf(String str, int fromIndex);
+     String substring(int start);
+     String substring(int start, int end);
+     String toString();
 
-    // delete methods
-    public StringBuilder delete(int start, int end);
-    public StringBuilder deleteCharAt(int index);
+     // update methods
+     StringBuilder replace(int start, int end, String str);
+     StringBuilder reverse();
+     void setChatAt(int index, char ch);
+     void setLength(int newLength);
 
-    // modify methods
-    public StringBuilder replace(int start, int end, String str);
-    public StringBuilder reverse();
-    public void setChatAt(int index, char ch);
-    public void setLength(int newLength);
+     // delete methods
+     StringBuilder delete(int start, int end);
+     StringBuilder deleteCharAt(int index);
 
-    // slice methods
-    public String substring(int start);
-    public String substring(int start, int end);
-
-    // convert methods
-    public String toString();
 }
